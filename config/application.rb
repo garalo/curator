@@ -21,6 +21,7 @@ module PakyowApplication
     
     routes do
       default :ApplicationController, :index
+      restful 'todos', :TodosController 
       Pakyow::Auth.routes
     end
     
