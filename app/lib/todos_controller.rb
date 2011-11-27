@@ -4,7 +4,7 @@ class TodosController
   def index
     Log.puts "TodosController:index"
     todos = Todo.all
-    view = presenter.view.find('#post')
+    presenter.view.find('#nav-todos a').add_class('active')
   end
   
   def show
