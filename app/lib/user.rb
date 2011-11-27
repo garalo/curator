@@ -1,4 +1,4 @@
-class User 
-  include Pakyow::Auth::User
-  has n, :todos
+require 'pakyow-auth'
+
+class User < Pakyow::Auth::User
 end
