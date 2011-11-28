@@ -12,10 +12,6 @@ class TodosController
   end
 
   def new
-    Log.puts "TodosController:new"
-  end
-
-  def create
     Log.puts "TodosController:create"
     post = Todo.create(request.params['post'])
     post.save

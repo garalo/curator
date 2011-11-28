@@ -1,4 +1,5 @@
-require 'pakyow-auth'
-
-class User < Pakyow::Auth::User
+class Pakyow::Auth::User
+      include DataMapper::Resource
+      has n, :todos
+      belongs_to :todo
 end
