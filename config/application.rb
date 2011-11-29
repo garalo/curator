@@ -9,15 +9,19 @@ require 'dm-migrations'
 
 module PakyowApplication
   class Application < Pakyow::Application
+
+  def initialize
+    super
+    DataMapper.finalize
+  end 
     config.app.default_environment = :development
   
     configure(:development) do
-      DataMapper.setup(:default, 'sqlite:///tmp/test.sqlite')
+      DataMapper.setup(:default, 'sqlite:///c:/Users/nate/curator/test.sqlite')
       DataMapper::Logger.new($stdout, :debug)
-      DataMapper.finalize
       DataMapper.auto_upgrade!
       app.log = true
-      app.dev_mode = true
+      #app.dev_mode = true
     end
     
     routes do

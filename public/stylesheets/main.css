@@ -11,7 +11,6 @@
     margin-left: 200px;
     margin-bottom: 20px;
     width: 960px;
-
 }
 
 /*#navigation li:hover {
@@ -45,9 +44,31 @@ body {
   clear: both;
 }
 
+#login_form{
+  margin-top: 10%;
+}
+
+.descriptive_field{
+  text-align: center;
+  opacity: 0.5; 
+}
+
+#password_field{
+  display: none;
+}
+
+#password_confirmation_field{
+  display: none;
+}
+
+input {
+  margin: 5px;
+}
 
 footer{
   text-align: center;
+  position: relative;
+  bottom: 10%;
 }
 
 @media only screen and (max-device-width: 480px){
