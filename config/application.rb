@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'pakyow'
 require 'data_mapper'
-require 'dm-migrations'
 require 'pakyow-auth'
 require 'app/lib/todo'
-require 'app/lib/user'
 require 'app/lib/tag'
+require 'app/lib/user'
+require 'dm-migrations'
 
 module PakyowApplication
   class Application < Pakyow::Application

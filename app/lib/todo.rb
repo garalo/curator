@@ -1,7 +1,8 @@
+
 class Todo
   include DataMapper::Resource
 
-  attr_accessor :id, :title, :body
+  attr_accessor :id, :title, :body, :user, :tags
   
   property :id,          Serial # auto-increment integer key
   property :name,        String 
@@ -10,6 +11,5 @@ class Todo
   property :created_at,  DateTime
 
   has n, :tags
-  has 1, :user
   belongs_to :user
 end     
