@@ -28,10 +28,25 @@ module PakyowApplication
       default :ApplicationController, :index
       restful 'todos', :TodosController 
       Pakyow::Auth.routes
+      post '/users' do
+        self.create_user request
+      end 
     end
     
     middleware do
       use Rack::Session::Cookie
+    end
+
+    def create_user(request)
+      user = User.new(request.params[:user])
+      if user.valid?
+        user.save!
+        redirect_to! '/'
+      else
+        presenter.use_view_path("users/new")
+        layout.bind(user)
+      end
+      
     end
   end
 end
